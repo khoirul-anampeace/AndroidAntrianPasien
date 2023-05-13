@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".DokterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayerBanner"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/layer"
+        app:layout_constraintBottom_toTopOf="@+id/TanggalView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <TextView
+            android:id="@+id/Tagline"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Tagline3"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.16" />
+
+        <TextView
+            android:id="@+id/Tagline2"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/Desc3"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Tagline"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="158dp"
+            android:layout_height="108dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/mainimg2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_Poli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TanggalView">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Dr1"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Dr2"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button1"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Dr3"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.056" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Dr4"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Dr5"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button4"
+            app:layout_constraintVertical_bias="0.213" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/TanggalView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:padding="20dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="Tanggal"
+        android:textColor="@color/ColorFontSecondary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

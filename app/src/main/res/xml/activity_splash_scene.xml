@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        motion:autotransition="animateToEnd">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:maxAcceleration="15.96"
+            motion:maxVelocity="1.59" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/backgroundImage"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="231dp"
+            android:layout_height="231dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.31"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="10"
+            android:scaleY="10" />
+        <Constraint
+            android:id="@+id/imageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="291dp"
+            android:layout_height="361dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.15"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:layout_height="145dp"
+            android:layout_marginBottom="168dp"
+            motion:layout_constraintVertical_bias="1.0"
+            motion:layout_constraintTop_toBottomOf="@+id/backgroundImage"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.711"
+            android:layout_height="145dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.445"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:id="@+id/Tagline"
+            android:scaleX="0"
+            android:scaleY="0" />
+        <Constraint
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.9"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/btnMulai"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.919" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            motion:layout_constraintVertical_bias="0.745"
+            android:layout_height="145dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:id="@+id/Tagline" />
+        <Constraint
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.945"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/btnMulai"
+            motion:layout_constraintVertical_bias="0.921" />
+    </ConstraintSet>
+</MotionScene>

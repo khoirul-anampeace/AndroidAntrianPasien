@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".PoliklinikActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayerBanner"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/layer"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <TextView
+            android:id="@+id/Tagline"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/nunitobold"
+            android:text="@string/Tagline2"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.16" />
+
+        <TextView
+            android:id="@+id/Tagline2"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10px"
+            android:layout_marginBottom="24dp"
+            android:text="@string/Desc2"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Tagline"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="175dp"
+            android:layout_height="112dp"
+            android:layout_margin="10px"
+            android:src="@drawable/mainimg1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.926"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_Poli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:onClick="ShowDatePickerDialog"
+            android:text="@string/Poli1"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:onClick="ShowDatePickerDialog"
+            android:text="@string/Poli2"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button1"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:onClick="ShowDatePickerDialog"
+            android:text="@string/Poli3"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.06" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:onClick="ShowDatePickerDialog"
+            android:text="@string/Poli4"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/btnprimary"
+            android:fontFamily="@font/nunitobold"
+            android:onClick="ShowDatePickerDialog"
+            android:text="@string/Poli5"
+            android:textColor="@color/ColorFontSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button4"
+            app:layout_constraintVertical_bias="0.213" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:text="Pilihlah Layanan Dari Kami"
+        android:textAlignment="center"
+        android:textColor="@color/ColorFontSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAntrean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/btncircle"
+        android:text="@string/antrean"
+        android:textColor="@color/ColorFontPrimary"
+        android:textStyle="bold"
+        android:fontFamily="@font/nunitobold"
+        android:drawableStart="@drawable/ic_tiket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_Poli"
+        app:layout_constraintVertical_bias="0.676" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
