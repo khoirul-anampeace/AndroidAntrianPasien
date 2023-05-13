@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">AndroidAntrianPasien</string>
+    <string name="btnMulai">Mulai</string>
+    <string name="Tagline">Konsultasi Lebih Mudah dan Cepat</string>
+    <string name="MenuPencarian">Pencarian</string>
+    <string name="MenuRuangan">Ruangan</string>
+    <string name="MenuRiwayat">Riwayat</string>
+    <string name="Tagline2">Temukan Layanan yang dibutuhkan</string>
+    <string name="Desc2">Menyediakan layanan kesehatan yang Anda butuhkan</string>
+    <string name="Tagline3">Tentukan Dokter untuk Konsultasi</string>
+    <string name="Desc3">Menyediakan dokter dengan kinerja terbaik di bidangnya</string>
+    <string name="Poli1">Poliklinik Gigi</string>
+    <string name="Poli2">Polikinik Penyakit Dalam</string>
+    <string name="Poli3">Polikinik Penyakit Anak</string>
+    <string name="Poli4">Polikinik Kulit dan Kelamin</string>
+    <string name="Poli5">Polikinik Ortophedi</string>
+    <string name="Dr1">Dr. Loid Forger</string>
+    <string name="Dr2">Dr. Kira Hoshino</string>
+    <string name="Dr3">Dr. Stone</string>
+    <string name="Dr4">Dr. Octopus</string>
+    <string name="Dr5">Dr. Strange</string>
+    <string name="antrean">ANTREAN</string>
+    <string name="puskemas">PUSKEMAS SUKAPURA</string>
+    <string name="peringatan">Pastikan untuk datang lebih awal, <b>jika nomor terlewat maka antrian hangus</b> </string>
+    <string name="Back">Kembali</string>
+
+    <string-array name="pelayanan_array">
+        <item>BPJS</item>
+        <item>KIS</item>
+        <item>Mandiri</item>
+    </string-array>
+
 </resources>
