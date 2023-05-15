@@ -96,4 +96,8 @@
             android:id="@+id/btnMulai"
             motion:layout_constraintVertical_bias="0.921" />
     </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:autoTransition="jumpToStart" />
 </MotionScene>

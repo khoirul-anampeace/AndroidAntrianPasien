@@ -76,6 +76,7 @@
             android:layout_height="50dp"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/backgroundPrimary"
             android:background="@drawable/bg_edit_text"
             />
 
