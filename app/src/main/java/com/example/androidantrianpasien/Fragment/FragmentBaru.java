@@ -1,5 +1,6 @@
 package com.example.androidantrianpasien.Fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,15 +14,22 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.androidantrianpasien.PoliklinikActivity;
 import com.example.androidantrianpasien.R;
 import com.example.androidantrianpasien.DokterActivity;
 
+import java.util.Calendar;
+
 public class FragmentBaru extends Fragment implements AdapterView.OnItemSelectedListener {
     private Spinner spinnerPelayanan;
     private Button buttonBack;
+    private TextView kolomTanggalLahir;
+    private DatePickerDialog datePickerDialog;
+    private Calendar calendar;
 
     @Nullable
     @Override
@@ -30,8 +38,10 @@ public class FragmentBaru extends Fragment implements AdapterView.OnItemSelected
 
         spinnerPelayanan = view.findViewById(R.id.SpinnerPelayanan);
         buttonBack = view.findViewById(R.id.buttonback);
+        kolomTanggalLahir = view.findViewById(R.id.KolomTanggalLahir);
+        calendar = Calendar.getInstance();
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(requireContext(), R.array.pelayanan_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.spinner_item, getResources().getStringArray(R.array.pelayanan_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPelayanan.setAdapter(adapter);
         spinnerPelayanan.setOnItemSelectedListener(this);
@@ -41,6 +51,27 @@ public class FragmentBaru extends Fragment implements AdapterView.OnItemSelected
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PoliklinikActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        kolomTanggalLahir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+                datePickerDialog = new DatePickerDialog(requireContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        // Update text pada KolomTanggalLahir dengan tanggal yang dipilih
+                        String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                        kolomTanggalLahir.setText(selectedDate);
+                    }
+                }, year, month, dayOfMonth);
+
+                // Tampilkan DatePickerDialog
+                datePickerDialog.show();
             }
         });
 

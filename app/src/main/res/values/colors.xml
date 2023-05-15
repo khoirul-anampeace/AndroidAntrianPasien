@@ -2,6 +2,7 @@
 <resources>
     <color name="backgroundPrimary">#50C2C9</color>
     <color name="backgroundSecondary">#FFFFFF</color>
+    <color name="backgroundTertiary">#3968FE</color>
     <color name="ColorFontPrimary">#FFFFFF</color>
     <color name="ColorFontSecondary">#50C2C9</color>
     <color name="ColorDefault">#7C7878</color>

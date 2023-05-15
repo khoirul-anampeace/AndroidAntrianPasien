@@ -27,7 +27,7 @@
     <string-array name="pelayanan_array">
         <item>BPJS</item>
         <item>KIS</item>
-        <item>Mandiri</item>
+        <item>UMUM</item>
     </string-array>
 
 </resources>

@@ -26,7 +26,6 @@ public class DokterActivity extends AppCompatActivity {
         String displayText = "NamaPoli: " + buttonName + "\nTanggal CheckUp: " + selectedDate;
         TanggalView.setText(displayText);
 
-        // membuat intent ke DaftarActivity saat button 1-5 diklik
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +33,7 @@ public class DokterActivity extends AppCompatActivity {
                 Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("buttonName", button1.getText().toString());
+                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
             }
         });
@@ -45,6 +45,7 @@ public class DokterActivity extends AppCompatActivity {
                 Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("buttonName", button2.getText().toString());
+                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
             }
         });
@@ -56,6 +57,7 @@ public class DokterActivity extends AppCompatActivity {
                 Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("buttonName", button3.getText().toString());
+                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
             }
         });
@@ -67,6 +69,7 @@ public class DokterActivity extends AppCompatActivity {
                 Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("buttonName", button4.getText().toString());
+                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
             }
         });
@@ -78,6 +81,7 @@ public class DokterActivity extends AppCompatActivity {
                 Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("buttonName", button5.getText().toString());
+                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
             }
         });
