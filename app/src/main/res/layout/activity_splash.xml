@@ -7,34 +7,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundPrimary"
+    android:orientation="vertical"
     app:layoutDescription="@xml/activity_splash_scene"
     tools:context=".SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="87dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="150dp"
         android:scaleType="center"
         android:src="@drawable/btncircle" />
+
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="304dp"
+        android:layout_height="374dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="311dp"
         android:scaleType="center"
         android:src="@drawable/splashimg" />
 
-
     <TextView
         android:id="@+id/Tagline"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/imageView"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="213dp"
         android:fontFamily="@font/nunitoextrabold"
         android:text="@string/Tagline"
         android:textAlignment="center"
@@ -43,14 +54,4 @@
         android:textStyle="bold"
         tools:ignore="UnknownId" />
 
-    <ProgressBar
-        android:id="@+id/loadingSpinner"
-        android:layout_below="@+id/Tagline"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="190dp"
-        android:indeterminate="true"
-        android:visibility="visible" />
 </RelativeLayout>

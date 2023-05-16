@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundSecondary"
-    tools:context=".DokterActivity">
+    tools:context=".DokterActivity"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayerBanner"
@@ -75,7 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TanggalView">
+        app:layout_constraintTop_toBottomOf="@+id/TanggalView"
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/button1"
@@ -126,7 +128,7 @@
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintVertical_bias="0.013" />
 
         <Button
             android:id="@+id/button4"
@@ -168,19 +170,19 @@
         android:id="@+id/TanggalView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
         android:background="@drawable/bg_edit_text"
         android:padding="20dp"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="30dp"
         android:text="Tanggal"
         android:textColor="@color/ColorFontSecondary"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.232" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
