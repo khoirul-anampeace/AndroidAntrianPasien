@@ -8,14 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DokterActivity extends AppCompatActivity {
 
     private TextView TanggalView;
+
+
+     BaseApiService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dokter);
+
+        apiService = URLapi.getAPIService();
 
         TanggalView = findViewById(R.id.TanggalView);
 
@@ -83,6 +93,22 @@ public class DokterActivity extends AppCompatActivity {
                 intent.putExtra("buttonName", button5.getText().toString());
                 intent.putExtra("tanggalViewText", TanggalView.getText().toString());
                 startActivity(intent);
+            }
+        });
+
+        getData();
+    }
+
+    private void getData() {
+        apiService.getDokter().enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                System.out.println("response dari api = " +response);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
             }
         });
     }
