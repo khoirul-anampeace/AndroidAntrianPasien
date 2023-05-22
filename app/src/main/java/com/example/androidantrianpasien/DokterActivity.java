@@ -1,33 +1,30 @@
 package com.example.androidantrianpasien;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.androidantrianpasien.Adapter.DokterAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DokterActivity extends AppCompatActivity {
 
     private TextView TanggalView;
-
-
-     BaseApiService apiService;
+    private RecyclerView recyclerView;
+    private DokterAdapter dokterAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dokter);
 
-        apiService = URLapi.getAPIService();
-
         TanggalView = findViewById(R.id.TanggalView);
+        recyclerView = findViewById(R.id.RvDokter);
 
         Intent intent = getIntent();
         String selectedDate = intent.getStringExtra("selectedDate");
@@ -36,80 +33,15 @@ public class DokterActivity extends AppCompatActivity {
         String displayText = "NamaPoli: " + buttonName + "\nTanggal CheckUp: " + selectedDate;
         TanggalView.setText(displayText);
 
-        Button button1 = findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
-                intent.putExtra("selectedDate", selectedDate);
-                intent.putExtra("buttonName", button1.getText().toString());
-                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
-                startActivity(intent);
-            }
-        });
+        List<String> dataList = new ArrayList<>();
+        dataList.add(getString(R.string.Dr1));
+        dataList.add(getString(R.string.Dr2));
+        dataList.add(getString(R.string.Dr3));
+        dataList.add(getString(R.string.Dr4));
+        dataList.add(getString(R.string.Dr5));
 
-        Button button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
-                intent.putExtra("selectedDate", selectedDate);
-                intent.putExtra("buttonName", button2.getText().toString());
-                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        Button button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
-                intent.putExtra("selectedDate", selectedDate);
-                intent.putExtra("buttonName", button3.getText().toString());
-                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        Button button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
-                intent.putExtra("selectedDate", selectedDate);
-                intent.putExtra("buttonName", button4.getText().toString());
-                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        Button button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DokterActivity.this, DaftarActivity.class);
-                intent.putExtra("selectedDate", selectedDate);
-                intent.putExtra("buttonName", button5.getText().toString());
-                intent.putExtra("tanggalViewText", TanggalView.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        getData();
-    }
-
-    private void getData() {
-        apiService.getDokter().enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                System.out.println("response dari api = " +response);
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-            }
-        });
+        dokterAdapter = new DokterAdapter(dataList, selectedDate);
+        recyclerView.setAdapter(dokterAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

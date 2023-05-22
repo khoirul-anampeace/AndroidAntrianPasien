@@ -46,30 +46,17 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/TanggalView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nunitobold"
-            android:text="Tanggal"
-            android:textColor="@color/ColorFontSecondary"
-            app:layout_constraintBottom_toTopOf="@+id/FullView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/FullView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitobold"
             android:text="FullView"
             android:textColor="@color/ColorFontSecondary"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.095"
+            app:layout_constraintHorizontal_bias="0.093"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TanggalView" />
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -79,7 +66,7 @@
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerViewB"
+            android:id="@+id/fragmentContainerView"
             android:name="com.example.androidantrianpasien.Fragment.FragmentBaru"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

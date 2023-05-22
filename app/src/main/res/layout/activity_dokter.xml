@@ -67,104 +67,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/list_Poli"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RvDokter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
+        android:layout_marginBottom="216dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TanggalView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.146">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/btnprimary"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Dr1"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/btnprimary"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Dr2"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.522"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/btnprimary"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Dr3"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.013" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/btnprimary"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Dr4"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/btnprimary"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Dr5"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4"
-            app:layout_constraintVertical_bias="0.213" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
         android:id="@+id/TanggalView"

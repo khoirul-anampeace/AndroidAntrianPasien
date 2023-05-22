@@ -7,18 +7,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.androidantrianpasien.Adapter.PoliklinikAdapter;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
-public class PoliklinikActivity extends AppCompatActivity {
+public class PoliklinikActivity extends AppCompatActivity implements PoliklinikAdapter.ItemClickListener {
     private Calendar calendar;
-    private Button button1, button2, button3, button4, button5, ButtonAntrean;
+    private Button ButtonAntrean;
     private String buttonName;
     private SimpleDateFormat dateFormat;
+    private RecyclerView recyclerView;
+    private PoliklinikAdapter poliklinikAdapter;
+    private List<String> poliklinikList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,58 +36,7 @@ public class PoliklinikActivity extends AppCompatActivity {
         calendar = Calendar.getInstance();
         dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
 
-
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
         ButtonAntrean = findViewById(R.id.buttonAntrean);
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonName = getResources().getString(R.string.Poli1);
-                ;
-                showDatePickerDialog();
-
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonName = getResources().getString(R.string.Poli2);
-                ;
-                showDatePickerDialog();
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonName = getResources().getString(R.string.Poli3);
-                ;
-                showDatePickerDialog();
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonName = getResources().getString(R.string.Poli4);
-                ;
-                showDatePickerDialog();
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonName = getResources().getString(R.string.Poli5);
-                ;
-                showDatePickerDialog();
-            }
-        });
 
         ButtonAntrean.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +45,19 @@ public class PoliklinikActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        recyclerView = findViewById(R.id.RvPoli);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        poliklinikList = new ArrayList<>();
+        poliklinikList.add(getString(R.string.Poli1));
+        poliklinikList.add(getString(R.string.Poli2));
+        poliklinikList.add(getString(R.string.Poli3));
+        poliklinikList.add(getString(R.string.Poli4));
+        poliklinikList.add(getString(R.string.Poli5));
+
+        poliklinikAdapter = new PoliklinikAdapter(poliklinikList, this);
+        recyclerView.setAdapter(poliklinikAdapter);
     }
 
     private void showDatePickerDialog() {
@@ -116,5 +86,11 @@ public class PoliklinikActivity extends AppCompatActivity {
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH))
                 .show();
+    }
+
+    @Override
+    public void onItemClick(String poliklinik) {
+        buttonName = poliklinik;
+        showDatePickerDialog();
     }
 }

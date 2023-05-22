@@ -15,45 +15,39 @@ import com.example.androidantrianpasien.Fragment.FragmentLama;
 
 public class DaftarActivity extends AppCompatActivity {
 
-    private TextView TanggalView;
     private TextView FullView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
 
-        TanggalView = findViewById(R.id.TanggalView);
         FullView = findViewById(R.id.FullView);
 
-        String tanggalViewText = getIntent().getStringExtra("tanggalViewText");
-        TanggalView.setText(tanggalViewText);
-
         String buttonName = getIntent().getStringExtra("buttonName");
-        FullView.setText(buttonName);
+        String selectedDate = getIntent().getStringExtra("selectedDate");
 
-        String displayText = "Nama Dokter : " + buttonName ;
+        String displayText = "Nama Poli: " + buttonName + "\nTanggal CheckUp: " + selectedDate + "\nNama Dokter : " + buttonName;
         FullView.setText(displayText);
 
         Button btnbaru = findViewById(R.id.baru);
-
         btnbaru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager =getSupportFragmentManager();
+                FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerViewB, FragmentBaru.class, null)
+                        .replace(R.id.fragmentContainerView, FragmentBaru.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name").commit();
             }
         });
+
         Button btnlama = findViewById(R.id.lama);
         btnlama.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerViewB, FragmentLama.class, null)
+                        .replace(R.id.fragmentContainerView, FragmentLama.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name").commit();
             }
