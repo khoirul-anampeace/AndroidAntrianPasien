@@ -23,8 +23,8 @@ public class SplashActivity extends AppCompatActivity {
 
         mSplashImage = findViewById(R.id.imageView);
         mSplashImage = findViewById(R.id.imageView2);
-//        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-//        mSplashImage.startAnimation(fadeIn);
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        mSplashImage.startAnimation(fadeIn);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
