@@ -3,23 +3,23 @@
     android:id="@+id/itemLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="5dp"
     android:layout_margin="10dp"
-    android:background="@drawable/bg_edit_text">
+    android:background="@drawable/bg_edit_text"
+    android:orientation="horizontal"
+    android:padding="5dp">
 
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginRight="10dp"
-        android:src="@drawable/ic_hospital"/>
+        android:src="@drawable/ic_hospital" />
 
     <TextView
         android:id="@+id/textViewDokter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/ColorFontSecondary"
+        android:layout_gravity="center"
         android:fontFamily="@font/nunitobold"
-        android:layout_gravity="center"/>
+        android:textColor="@color/ColorFontSecondary" />
 
 </LinearLayout>

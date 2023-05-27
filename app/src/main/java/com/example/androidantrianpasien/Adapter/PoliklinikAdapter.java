@@ -1,65 +1,78 @@
 package com.example.androidantrianpasien.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidantrianpasien.DokterActivity;
+import com.example.androidantrianpasien.Model.ItemPoliklinik;
 import com.example.androidantrianpasien.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PoliklinikAdapter extends RecyclerView.Adapter<PoliklinikAdapter.ViewHolder> {
-    private List<String> poliklinikList;
-    private ItemClickListener itemClickListener;
 
-    public PoliklinikAdapter(List<String> poliklinikList, ItemClickListener itemClickListener) {
-        this.poliklinikList = poliklinikList;
-        this.itemClickListener = itemClickListener;
+    Context context;
+    ArrayList<ItemPoliklinik> list;
+
+    public PoliklinikAdapter(ArrayList<ItemPoliklinik> item, Context context) {
+        this.list = item;
+        this.context = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewPoli;
+        LinearLayout wrap;
+
+        ItemClickListener itemClick;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textViewPoli = itemView.findViewById(R.id.textViewPoli);
+            wrap = itemView.findViewById(R.id.wrap);
             itemView.setOnClickListener(this);
         }
 
         @Override
-        public void onClick(View v) {
-            int position = getAdapterPosition();
-            if (position != RecyclerView.NO_POSITION) {
-                String poliklinik = poliklinikList.get(position);
-                itemClickListener.onItemClick(poliklinik);
-            }
+        public void onClick(View view) {
+            itemClick.onItemClick(view, getLayoutPosition());
         }
     }
 
-    public interface ItemClickListener {
-        void onItemClick(String poliklinik);
+    interface ItemClickListener {
+        void onItemClick(View view, int layoutPosition);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_poli, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_poli, parent, false);
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String poliklinik = poliklinikList.get(position);
-        holder.textViewPoli.setText(poliklinik);
+        ItemPoliklinik item = list.get(position);
+
+        holder.textViewPoli.setText(item.getNama_poli());
+        holder.wrap.setOnClickListener(view -> {
+            Intent a = new Intent(context, DokterActivity.class);
+            a.putExtra("kode", item.getKode_poli());
+            a.putExtra("nama", item.getNama_poli());
+            context.startActivity(a);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return poliklinikList.size();
+        return list.size();
     }
 }

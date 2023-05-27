@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundSecondary"
-    tools:context=".PoliklinikActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".PoliklinikActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/LayerBanner"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@drawable/layer"
+        android:orientation="horizontal"
+        android:weightSum="3"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,56 +23,48 @@
         app:layout_constraintVertical_bias="0.0">
 
 
-        <TextView
-            android:id="@+id/Tagline"
-            android:layout_width="182dp"
-            android:layout_height="60dp"
-            android:fontFamily="@font/nunitobold"
-            android:text="@string/Tagline2"
-            android:textColor="@color/ColorFontPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.16" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <TextView
-            android:id="@+id/Tagline2"
-            android:layout_width="182dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="10px"
-            android:layout_marginBottom="24dp"
-            android:text="@string/Desc2"
-            android:textColor="@color/ColorFontPrimary"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Tagline"
-            app:layout_constraintVertical_bias="1.0" />
+            <TextView
+                android:id="@+id/Tagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitobold"
+                android:text="@string/Tagline2"
+                android:textColor="@color/ColorFontPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="175dp"
-            android:layout_height="112dp"
-            android:layout_margin="10px"
-            android:src="@drawable/mainimg1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.926"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.333" />
+            <TextView
+                android:id="@+id/Tagline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Desc2"
+                android:textColor="@color/ColorFontPrimary"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:src="@drawable/mainimg1" />
+        </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-    
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -117,10 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_Poli"
         app:layout_constraintVertical_bias="0.533" />
-
-    
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,9 @@ import com.example.androidantrianpasien.Fragment.FragmentLama;
 public class DaftarActivity extends AppCompatActivity {
 
     private TextView FullView;
+
+    String poli, poli_nama, dokter, dokter_nama, tanggal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,34 +26,31 @@ public class DaftarActivity extends AppCompatActivity {
 
         FullView = findViewById(R.id.FullView);
 
-        String buttonName = getIntent().getStringExtra("buttonName");
-        String selectedDate = getIntent().getStringExtra("selectedDate");
+        poli = getIntent().getStringExtra("poli");
+        poli_nama = getIntent().getStringExtra("poli_nama");
+        dokter = getIntent().getStringExtra("dokter");
+        dokter_nama = getIntent().getStringExtra("dokter_nama");
+        tanggal = getIntent().getStringExtra("tanggal");
 
-        String displayText = "Nama Poli: " + buttonName + "\nTanggal CheckUp: " + selectedDate + "\nNama Dokter : " + buttonName;
+        String displayText = "Nama Poli: " + poli_nama + "\nTanggal CheckUp: " + tanggal + "\nNama Dokter : " + dokter_nama;
         FullView.setText(displayText);
 
         Button btnbaru = findViewById(R.id.baru);
-        btnbaru.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView, FragmentBaru.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name").commit();
-            }
+        btnbaru.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView, FragmentBaru.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name").commit();
         });
 
         Button btnlama = findViewById(R.id.lama);
-        btnlama.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView, FragmentLama.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name").commit();
-            }
+        btnlama.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView, FragmentLama.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name").commit();
         });
     }
 }

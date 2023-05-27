@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">AndroidAntrianPasien</string>
+    <string name="app_name">Antrian Pasien</string>
     <string name="btnMulai">Mulai</string>
     <string name="Tagline">Konsultasi Lebih Mudah dan Cepat</string>
     <string name="MenuPencarian">Pencarian</string>
-    <string name="MenuRuangan">Ruangan</string>
+    <string name="MenuRuangan">Ruangan</string>4V
     <string name="MenuRiwayat">Riwayat</string>
     <string name="Tagline2">Temukan Layanan yang dibutuhkan</string>
     <string name="Desc2">Menyediakan layanan kesehatan yang Anda butuhkan</string>
