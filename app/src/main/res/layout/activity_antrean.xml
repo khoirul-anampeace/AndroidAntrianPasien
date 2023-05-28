@@ -17,54 +17,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_margin="60dp"
+        android:layout_marginTop="80dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
         android:background="@drawable/bg_antrian"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115">
+        android:orientation="vertical"
+        android:textAlignment="center">
 
-        <ImageView
-            android:id="@+id/LogoPuskemas"
-            android:layout_width="49dp"
-            android:layout_height="38dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/ic_hospital"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.075"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025" />
-
-        <TextView
-            android:id="@+id/puskesmas"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/nunitoextrabold"
-            android:text="@string/puskemas"
-            android:textColor="@color/ColorDefault"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/LogoPuskemas"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.069" />
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <ImageView
+                android:id="@+id/LogoPuskemas"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_hospital"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025"
+                />
+
+            <TextView
+                android:id="@+id/puskesmas"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="6pt"
+                android:fontFamily="@font/nunitoextrabold"
+                android:text="@string/puskemas"
+                android:textColor="@color/ColorDefault"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/LogoPuskemas"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.069"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/TanggalView"
-            android:layout_width="wrap_content"
+            android:id="@+id/tanggalview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-
+            android:textAlignment="center"
             android:fontFamily="@font/nunito"
             android:text="Tanggal"
             android:textColor="@color/ColorDefault"
@@ -77,12 +90,13 @@
 
         <TextView
             android:id="@+id/NomorAntrian"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitobold"
             android:text="Nomor Antrean"
             android:textColor="@color/ColorDefault"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,10 +104,11 @@
             app:layout_constraintVertical_bias="0.298" />
 
         <TextView
-            android:id="@+id/Antrian"
-            android:layout_width="wrap_content"
+            android:id="@+id/nomorantrianview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitoextrabold"
+            android:textAlignment="center"
             android:text="01"
             android:textColor="@color/ColorDefault"
             android:textSize="64sp"
@@ -106,11 +121,12 @@
             app:layout_constraintVertical_bias="0.101" />
 
         <TextView
-            android:id="@+id/Poliklinik"
-            android:layout_width="wrap_content"
+            android:id="@+id/poliview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitobold"
             android:text="Poli"
+            android:textAlignment="center"
             android:textColor="@color/ColorDefault"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -122,15 +138,14 @@
 
         <TextView
             android:id="@+id/Peringatan"
-            android:layout_width="199dp"
-            android:layout_height="63dp"
-            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:background="@drawable/bg_antrian"
             android:fontFamily="@font/nunito"
             android:text="@string/peringatan"
-            android:textAlignment="center"
             android:textColor="@color/ColorDefault"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.508"
@@ -138,23 +153,19 @@
             app:layout_constraintTop_toBottomOf="@+id/Poliklinik"
             app:layout_constraintVertical_bias="0.673" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonback"
-        android:layout_width="match_parent"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btnback2"
-        android:drawableStart="@drawable/btnback"
-        android:layout_marginHorizontal="65dp"
+        android:layout_marginTop="20dp"
         android:padding="10px"
         android:text="@string/Back"
         android:textColor="@color/ColorFontPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

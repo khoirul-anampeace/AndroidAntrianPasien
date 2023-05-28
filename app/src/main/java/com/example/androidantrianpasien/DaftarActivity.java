@@ -17,7 +17,7 @@ public class DaftarActivity extends AppCompatActivity {
 
     private TextView FullView;
 
-    String poli, poli_nama, dokter, dokter_nama, tanggal;
+    public String poli, poli_nama, dokter, dokter_nama, tanggal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

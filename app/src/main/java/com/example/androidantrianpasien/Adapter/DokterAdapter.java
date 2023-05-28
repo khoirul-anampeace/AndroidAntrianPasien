@@ -5,7 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,12 +25,14 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewDokter;
-        LinearLayout wrap;
+        CheckBox checkbox;
+        RelativeLayout wrap;
         ItemClickListener itemClick;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textViewDokter = itemView.findViewById(R.id.textViewDokter);
+            checkbox = itemView.findViewById(R.id.checkbox);
             wrap = itemView.findViewById(R.id.itemLayout);
             itemView.setOnClickListener(this);
         }
@@ -66,11 +69,28 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         ItemDokter item = list.get(position);
 
-        holder.textViewDokter.setText(item.getNama_dokter());
+        if (checkedPosition == -1) {
+            holder.checkbox.setChecked(false);
+            holder.checkbox.setVisibility(View.GONE);
+        } else {
+            if (checkedPosition == position) {
+                holder.checkbox.setChecked(true);
+                holder.checkbox.setVisibility(View.VISIBLE);
+            } else {
+                holder.checkbox.setChecked(false);
+                holder.checkbox.setVisibility(View.GONE);
+            }
+        }
 
+        holder.textViewDokter.setText(item.getNama_dokter());
         holder.wrap.setOnClickListener(v -> {
-            notifyItemChanged(checkedPosition);
-            checkedPosition = position;
+            holder.checkbox.setChecked(true);
+            holder.checkbox.setVisibility(View.VISIBLE);
+
+            if (checkedPosition != position) {
+                notifyItemChanged(checkedPosition);
+                checkedPosition = position;
+            }
         });
     }
 

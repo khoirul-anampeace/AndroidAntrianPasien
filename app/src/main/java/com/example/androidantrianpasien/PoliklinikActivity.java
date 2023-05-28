@@ -3,6 +3,7 @@ package com.example.androidantrianpasien;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -44,6 +45,9 @@ public class PoliklinikActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poliklinik);
+        SharedPreferences mSettings = getBaseContext().getSharedPreferences("Apasien", Context.MODE_PRIVATE);
+        String cookieName = mSettings.getString("nik", "missing");
+        System.out.println("Nilai Nik " + cookieName);
 
         calendar = Calendar.getInstance();
         dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());

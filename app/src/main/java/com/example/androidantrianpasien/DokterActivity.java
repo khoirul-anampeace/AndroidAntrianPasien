@@ -65,7 +65,7 @@ public class DokterActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        // koneksi api
+        // dapatkan dari activity sebelumnya
         Intent b = getIntent();
         kode = b.getStringExtra("kode");
         nama = b.getStringExtra("nama");
@@ -115,6 +115,7 @@ public class DokterActivity extends AppCompatActivity {
             }
         });
 
+        // koneksi api
         apiService = URLapi.getAPIService();
         getData();
     }

@@ -4,45 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/backgroundSecondary"
+    android:orientation="vertical"
     tools:context=".DaftarActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/layer"
         android:orientation="horizontal"
-        android:padding="40dp"
-        android:background="@drawable/layer">
+        android:padding="40dp">
 
         <Button
             android:id="@+id/baru"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Baru"
+            android:background="@drawable/btnbaru"
             android:elevation="4dp"
             android:fontFamily="@font/nunitobold"
-            android:textStyle="bold"
+            android:text="Baru"
             android:textColor="@color/ColorFontSecondary"
-            android:background="@drawable/btnbaru" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/lama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Lama"
+            android:background="@drawable/btnlama"
             android:fontFamily="@font/nunitobold"
-            android:textStyle="bold"
+            android:text="Lama"
             android:textColor="@color/ColorFontSecondary"
-            android:background="@drawable/btnlama"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
         android:layout_margin="20dp"
+        android:background="@drawable/bg_edit_text"
         android:padding="10dp">
 
         <TextView
@@ -69,6 +71,8 @@
             android:id="@+id/fragmentContainerView"
             android:name="com.example.androidantrianpasien.Fragment.FragmentBaru"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
     </LinearLayout>
+
 </LinearLayout>
