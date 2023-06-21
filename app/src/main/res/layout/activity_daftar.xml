@@ -23,20 +23,11 @@
             android:background="@drawable/btnbaru"
             android:elevation="4dp"
             android:fontFamily="@font/nunitobold"
-            android:text="Baru"
+            android:text="Data Diri"
             android:textColor="@color/ColorFontSecondary"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/lama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/btnlama"
-            android:fontFamily="@font/nunitobold"
-            android:text="Lama"
-            android:textColor="@color/ColorFontSecondary"
-            android:textStyle="bold" />
+
 
     </LinearLayout>
 

@@ -44,13 +44,13 @@ public class DaftarActivity extends AppCompatActivity {
                     .addToBackStack("name").commit();
         });
 
-        Button btnlama = findViewById(R.id.lama);
-        btnlama.setOnClickListener(view -> {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, FragmentLama.class, null)
-                    .setReorderingAllowed(true)
-                    .addToBackStack("name").commit();
-        });
+//        Button btnlama = findViewById(R.id.lama);
+//        btnlama.setOnClickListener(view -> {
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            fragmentManager.beginTransaction()
+//                    .replace(R.id.fragmentContainerView, FragmentLama.class, null)
+//                    .setReorderingAllowed(true)
+//                    .addToBackStack("name").commit();
+//        });
     }
 }

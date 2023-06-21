@@ -48,7 +48,13 @@ public class AntreanActivity extends AppCompatActivity {
         PoliView = findViewById(R.id.poliview);
 
         buttonkembali = findViewById(R.id.buttonback);
-        buttonkembali.setOnClickListener(v -> finish());
+        buttonkembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toPoli = new Intent(AntreanActivity.this, PoliklinikActivity.class);
+                startActivity(toPoli);
+            }
+        });
 
         // Baca sharedpreference
         SharedPreferences mSettings = getBaseContext().getSharedPreferences("Apasien", Context.MODE_PRIVATE);
@@ -59,7 +65,6 @@ public class AntreanActivity extends AppCompatActivity {
         apiService = URLapi.getAPIService();
         getData();
     }
-
     private void getData() {
         apiService.getBookByNik(nik).enqueue(new Callback<ResponseBody>() {
             @Override
